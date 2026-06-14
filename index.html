@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalia Hossam Esmat — Fashion Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Jost:ital,wght@0,300..600;1,300..400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --parchment:#ece2d0;
+    --paper:#f7f1e5;
+    --ink:#2a2019;
+    --ink-soft:#6b5c4d;
+    --oxblood:#7c2a2a;
+    --oxblood-dark:#5e1f1f;
+    --brass:#b8923f;
+    --teal:#3e5c56;
+    --line:rgba(42,32,25,0.14);
+    --font-display:'Bodoni Moda', serif;
+    --font-body:'Jost', sans-serif;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--font-body);
+    background:var(--parchment);
+    color:var(--ink);
+    line-height:1.7;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .container{ max-width:1180px; margin:0 auto; padding:0 1.75rem; }
+
+  a{ color:inherit; }
+  img{ display:block; max-width:100%; }
+
+  .eyebrow{
+    font-family:var(--font-body);
+    text-transform:uppercase;
+    letter-spacing:0.32em;
+    font-size:0.7rem;
+    font-weight:500;
+    color:var(--oxblood);
+    margin-bottom:0.9rem;
+  }
+
+  .section-title{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(2.1rem, 4.5vw, 3.4rem);
+    line-height:1.1;
+  }
+
+  .section{ padding:5.5rem 0; }
+  .section-head{ margin-bottom:3rem; max-width:640px; }
+  .section-head p{ color:var(--ink-soft); margin-top:1rem; font-size:1.02rem; }
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal.in-view{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* ---------- brocade ribbon (signature motif) ---------- */
+  .ribbon{ width:100%; height:26px; display:block; }
+  .ribbon svg{ display:block; width:100%; height:100%; }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    padding:1.4rem 0;
+    transition:background .35s ease, padding .35s ease, border-color .35s ease;
+    border-bottom:1px solid transparent;
+  }
+  .nav.scrolled{
+    background:rgba(236,226,208,0.9);
+    backdrop-filter:blur(10px);
+    border-color:var(--line);
+    padding:0.85rem 0;
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; }
+  .logo{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:1.35rem;
+    letter-spacing:0.03em;
+    text-decoration:none;
+  }
+  .nav-links{
+    display:flex; align-items:center; gap:2.4rem; list-style:none;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size:0.74rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--ink);
+    position:relative;
+    padding-bottom:0.3rem;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:0; height:1px; width:0;
+    background:var(--oxblood); transition:width .3s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+
+  .menu-toggle{
+    display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:0.4rem;
+  }
+  .menu-toggle span{ width:22px; height:1px; background:var(--ink); transition:transform .3s ease, opacity .3s ease; }
+  .menu-toggle.active span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .menu-toggle.active span:nth-child(2){ opacity:0; }
+  .menu-toggle.active span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:7rem 1.75rem 4rem;
+  }
+  .hero .eyebrow{ margin-bottom:1.4rem; }
+  .hero h1{
+    font-family:var(--font-display);
+    line-height:0.98;
+    font-weight:500;
+  }
+  .hero h1 .line-main{
+    display:block;
+    font-size:clamp(3.2rem, 13vw, 8rem);
+  }
+  .hero h1 .line-sub{
+    display:block;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(1.6rem, 6vw, 3.4rem);
+    color:var(--oxblood);
+    margin-top:0.2rem;
+  }
+  .hero .lead{
+    max-width:520px;
+    margin:1.8rem auto 2.6rem;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+  }
+  .hero-actions{ display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:0.6rem;
+    padding:0.95rem 2rem;
+    font-family:var(--font-body);
+    font-size:0.74rem;
+    letter-spacing:0.24em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border:1px solid var(--ink);
+    background:transparent;
+    color:var(--ink);
+    cursor:pointer;
+    transition:background .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .btn-primary{ background:var(--oxblood); border-color:var(--oxblood); color:var(--paper); }
+  .btn-primary:hover{ background:var(--oxblood-dark); border-color:var(--oxblood-dark); }
+  .btn-outline:hover{ background:var(--ink); color:var(--paper); }
+
+  /* ---------- about ---------- */
+  #about .about-grid{
+    display:grid; grid-template-columns:1fr 1.4fr; gap:3.5rem; align-items:start;
+  }
+  #about p{ color:var(--ink-soft); font-size:1.02rem; margin-bottom:1.1rem; }
+  .info-strip{
+    display:flex; gap:2.2rem; margin-top:2rem; flex-wrap:wrap;
+  }
+  .info-strip div{ border-top:1px solid var(--line); padding-top:0.8rem; min-width:120px; }
+  .info-strip span{ display:block; font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:0.35rem; }
+  .info-strip strong{ font-family:var(--font-display); font-size:1.15rem; font-weight:500; }
+
+  /* ---------- education ---------- */
+  .edu-list{ display:flex; flex-direction:column; gap:1.4rem; }
+  .edu-card{
+    border:1px solid var(--line);
+    background:var(--paper);
+    padding:1.8rem 2rem;
+    display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; align-items:flex-start;
+  }
+  .edu-card h3{ font-family:var(--font-display); font-weight:500; font-size:1.3rem; margin-bottom:0.3rem; }
+  .edu-card p{ color:var(--ink-soft); font-size:0.95rem; }
+  .edu-meta{ text-align:right; }
+  .edu-date{ font-size:0.74rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--oxblood); }
+  .edu-grade{ font-size:0.85rem; color:var(--ink-soft); margin-top:0.4rem; }
+
+  /* ---------- craft / skills ---------- */
+  .craft-grid{ display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+  .craft-col h3{
+    font-family:var(--font-display); font-weight:500; font-size:1.4rem; margin-bottom:1.2rem;
+    padding-bottom:0.6rem; border-bottom:1px solid var(--line);
+  }
+  .tag-list{ display:flex; flex-wrap:wrap; gap:0.7rem; }
+  .tag{
+    border:1px solid var(--line);
+    padding:0.55rem 1.1rem;
+    font-size:0.85rem;
+    color:var(--ink);
+    background:var(--paper);
+  }
+
+  /* ---------- experience timeline ---------- */
+  .timeline{ display:flex; flex-direction:column; }
+  .timeline-item{
+    display:grid; grid-template-columns:28px 1fr; gap:1.6rem;
+    padding-bottom:2.6rem; position:relative;
+  }
+  .timeline-item:last-child{ padding-bottom:0; }
+  .timeline-marker{ position:relative; display:flex; justify-content:center; }
+  .timeline-marker::before{
+    content:""; width:9px; height:9px; border-radius:50%;
+    background:var(--oxblood); margin-top:0.5rem; z-index:1;
+  }
+  .timeline-marker::after{
+    content:""; position:absolute; top:0.9rem; bottom:-2.6rem; width:1px; background:var(--line);
+  }
+  .timeline-item:last-child .timeline-marker::after{ display:none; }
+  .timeline-content h3{ font-family:var(--font-display); font-weight:500; font-size:1.35rem; margin-bottom:0.45rem; }
+  .timeline-content p{ color:var(--ink-soft); font-size:0.98rem; max-width:600px; }
+  .timeline-content a{
+    display:inline-block; margin-top:0.6rem; font-size:0.76rem; letter-spacing:0.18em; text-transform:uppercase;
+    text-decoration:none; color:var(--oxblood); border-bottom:1px solid var(--oxblood); padding-bottom:0.15rem;
+  }
+
+  /* ---------- collection / gallery ---------- */
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:1.4rem;
+  }
+  .look-card{
+    position:relative; aspect-ratio:3/4; overflow:hidden;
+    background:var(--paper); border:1px solid var(--line);
+  }
+  .look-card .sketch, .look-card img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .look-number{
+    position:absolute; top:0.9rem; left:1rem;
+    font-family:var(--font-display); font-style:italic; font-size:1.5rem; color:var(--oxblood);
+    text-shadow:0 1px 8px rgba(247,241,229,0.6);
+  }
+  .look-caption{
+    position:absolute; left:0; right:0; bottom:0; padding:1.1rem 1.2rem;
+    background:linear-gradient(180deg, rgba(42,32,25,0) 0%, rgba(42,32,25,0.82) 100%);
+    color:var(--paper);
+    transform:translateY(100%);
+    transition:transform .4s ease;
+  }
+  .look-card:hover .look-caption, .look-card:focus-within .look-caption{ transform:translateY(0); }
+  .look-caption .look-label{
+    display:block; font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--brass); margin-bottom:0.25rem;
+  }
+  .look-caption p{ font-size:0.92rem; }
+
+  .menu-toggle:focus-visible, a:focus-visible, button:focus-visible{
+    outline:2px solid var(--oxblood); outline-offset:2px;
+  }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--ink); color:var(--paper); padding-top:4.5rem; }
+  .footer-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:3rem; padding-bottom:3.5rem;
+  }
+  .footer-grid h3{
+    font-family:var(--font-display); font-style:italic; font-size:1.6rem; margin-bottom:1rem; font-weight:500;
+  }
+  .footer-grid p{ color:rgba(247,241,229,0.7); max-width:340px; font-size:0.95rem; }
+  .footer-col span{
+    display:block; font-size:0.68rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--brass); margin-bottom:1rem;
+  }
+  .footer-col a{
+    display:block; text-decoration:none; color:var(--paper); font-size:0.98rem; margin-bottom:0.6rem;
+    border-bottom:1px solid transparent; transition:border-color .25s ease; padding-bottom:0.15rem; width:fit-content;
+  }
+  .footer-col a:hover{ border-color:var(--brass); }
+  .footer-col p{ color:rgba(247,241,229,0.7); margin-bottom:0.4rem; font-size:0.95rem; }
+  .footer-bottom{
+    border-top:1px solid rgba(247,241,229,0.12); padding:1.6rem 0; text-align:center;
+    font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(247,241,229,0.5);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px){
+    .about-grid, .craft-grid{ grid-template-columns:1fr; gap:2.5rem; }
+    .footer-grid{ grid-template-columns:1fr; gap:2.5rem; }
+    .edu-meta{ text-align:left; }
+  }
+  @media (max-width: 720px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; align-items:flex-start; gap:1.4rem;
+      background:rgba(236,226,208,0.97); backdrop-filter:blur(10px);
+      padding:2rem 1.75rem; border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease;
+    }
+    .nav-links.open{ max-height:320px; padding:2rem 1.75rem; }
+    .menu-toggle{ display:flex; }
+  }
+  @media (max-width: 520px){
+    .section{ padding:4rem 0; }
+    .edu-card{ flex-direction:column; }
+    .info-strip{ gap:1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- shared SVG defs for the brocade ribbon motif -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="brocade" patternUnits="userSpaceOnUse" width="80" height="26">
+      <rect width="80" height="26" fill="var(--paper)"/>
+      <line x1="0" y1="13" x2="80" y2="13" stroke="#7c2a2a" stroke-width="1" opacity="0.35"/>
+      <path d="M8,13 C8,5 26,5 26,13 C26,21 12,23 8,13 Z" fill="none" stroke="#7c2a2a" stroke-width="1.2" opacity="0.65"/>
+      <circle cx="15" cy="12" r="2" fill="#b8923f" opacity="0.85"/>
+      <g transform="translate(80,26) rotate(180)">
+        <path d="M8,13 C8,5 26,5 26,13 C26,21 12,23 8,13 Z" fill="none" stroke="#7c2a2a" stroke-width="1.2" opacity="0.65"/>
+        <circle cx="15" cy="12" r="2" fill="#b8923f" opacity="0.85"/>
+      </g>
+      <circle cx="60" cy="13" r="1.6" fill="#3e5c56" opacity="0.55"/>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">Dalia Hossam</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#craft">Craft</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <p class="eyebrow">Fashion Designer — Cairo, Egypt</p>
+  <h1>
+    <span class="line-main">Dalia Hossam</span>
+    <span class="line-sub">Esmat</span>
+  </h1>
+  <p class="lead">A final-year fashion design student working across garment construction, digital pattern-making and brand storytelling — most recently as the founder of Dibaj.</p>
+  <div class="hero-actions">
+    <a href="#collection" class="btn btn-primary">View the Collection</a>
+    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+  </div>
+</header>
+
+<div class="ribbon"><svg preserveAspectRatio="none" viewBox="0 0 800 26"><rect width="800" height="26" fill="url(#brocade)"/></svg></div>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <p class="eyebrow">Profile</p>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="reveal">
+      <p>Dalia approaches fashion as a conversation between aesthetics, function and detail. Her work is shaped by a steady curiosity — for new techniques, new silhouettes, and the small decisions that make a garment feel considered rather than generic.</p>
+      <p>She is currently completing her degree at the Faculty of Applied Arts, Fashion Design Department, Helwan University, where her training spans garment construction, digital design and presentation. Alongside her studies, she founded Dibaj, an independent fashion label, and recently presented her own work on the runway at Cairo Fashion Show 2026.</p>
+      <div class="info-strip">
+        <div><span>Based in</span><strong>Cairo, Egypt</strong></div>
+        <div><span>Studying</span><strong>2021 – 2026</strong></div>
+        <div><span>Focus</span><strong>Womenswear &amp; Brand Design</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Education</p>
+      <h2 class="section-title">Education &amp; Training</h2>
+    </div>
+    <div class="edu-list">
+      <div class="edu-card reveal">
+        <div>
+          <h3>B.A. in Fashion Design</h3>
+          <p>Faculty of Applied Arts, Fashion Department — Helwan University</p>
+        </div>
+        <div class="edu-meta">
+          <div class="edu-date">2021 – 2026</div>
+          <div class="edu-grade">Overall Grade: Very Good</div>
+        </div>
+      </div>
+      <div class="edu-card reveal">
+        <div>
+          <h3>Motion Graphics Course</h3>
+          <p>Digital Egypt Pioneers Initiative (DEPI)</p>
+        </div>
+        <div class="edu-meta">
+          <div class="edu-date">Oct 2024 – May 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRAFT / SKILLS ============ -->
+<section class="section" id="craft">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Craft</p>
+      <h2 class="section-title">Tools &amp; Working Style</h2>
+      <p>The software Dalia designs, renders and presents with — and the habits that hold a project together from concept to runway.</p>
+    </div>
+    <div class="craft-grid">
+      <div class="craft-col reveal">
+        <h3>Tools of the Trade</h3>
+        <div class="tag-list">
+          <span class="tag">Adobe Illustrator</span>
+          <span class="tag">Adobe Photoshop</span>
+          <span class="tag">CLO 3D</span>
+          <span class="tag">Adobe After Effects</span>
+          <span class="tag">Microsoft Excel</span>
+          <span class="tag">Microsoft Word</span>
+          <span class="tag">Microsoft PowerPoint</span>
+          <span class="tag">Canva</span>
+        </div>
+      </div>
+      <div class="craft-col reveal">
+        <h3>Working Style</h3>
+        <div class="tag-list">
+          <span class="tag">Creativity</span>
+          <span class="tag">Attention to Detail</span>
+          <span class="tag">Time Management</span>
+          <span class="tag">Communication</span>
+          <span class="tag">Teamwork &amp; Collaboration</span>
+          <span class="tag">Problem Solving</span>
+          <span class="tag">Adaptability</span>
+          <span class="tag">Organisation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Experience</p>
+      <h2 class="section-title">On the Floor &amp; On the Runway</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Cairo Fashion Show 2026</h3>
+          <p>Presented original designs on the runway, gaining first-hand experience in show production, presentation and styling.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Al Nasser Textile Factory — Training Programme</h3>
+          <p>Worked across the production floor to learn garment manufacturing, fabric handling and quality control from the inside out.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Dibaj — ديباچ — Founder</h3>
+          <p>Runs an independent fashion label on Instagram, overseeing everything from design selection and sourcing to marketing and customer relationships.</p>
+          <a href="https://www.instagram.com/dibajfashion_" target="_blank" rel="noopener">@dibajfashion_ ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLLECTION / GALLERY ============ -->
+<section class="section" id="collection">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Portfolio</p>
+      <h2 class="section-title">The Collection</h2>
+      <p>A working archive of designs, sketches and finished garments — growing with every collection.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- default placeholder looks -->
+      <div class="look-card reveal">
+        <svg class="sketch" viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="320" fill="#f7f1e5"/>
+          <path d="M90,46 L150,46 L168,82 L160,140 L178,300 L62,300 L80,140 L72,82 Z" fill="none" stroke="#7c2a2a" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M104,48 C110,70 120,88 120,104 C120,88 130,70 136,48" fill="none" stroke="#7c2a2a" stroke-width="1.2"/>
+          <line x1="120" y1="104" x2="120" y2="296" stroke="#7c2a2a" stroke-width="1" opacity="0.6"/>
+          <circle cx="120" cy="150" r="2.4" fill="#b8923f"/>
+          <circle cx="120" cy="180" r="2.4" fill="#b8923f"/>
+          <circle cx="120" cy="210" r="2.4" fill="#b8923f"/>
+          <rect x="78" y="148" width="84" height="6" fill="#7c2a2a" opacity="0.4"/>
+        </svg>
+        <span class="look-number">01</span>
+        <div class="look-caption">
+          <span class="look-label">Look 01</span>
+          <p>Tailored silhouette study</p>
+        </div>
+      </div>
+
+      <div class="look-card reveal">
+        <svg class="sketch" viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="320" fill="#f7f1e5"/>
+          <path d="M100,40 L100,60 M140,40 L140,60" stroke="#7c2a2a" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M95,60 L145,60 L150,150 L90,150 Z" fill="none" stroke="#7c2a2a" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M90,150 C70,200 42,260 32,300 L208,300 C198,260 170,200 150,150 Z" fill="none" stroke="#7c2a2a" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M72,162 C64,222 60,266 64,300" fill="none" stroke="#7c2a2a" stroke-width="1" opacity="0.5"/>
+          <path d="M110,152 C106,222 106,266 110,300" fill="none" stroke="#7c2a2a" stroke-width="1" opacity="0.5"/>
+          <path d="M150,162 C162,222 170,266 168,300" fill="none" stroke="#7c2a2a" stroke-width="1" opacity="0.5"/>
+          <rect x="90" y="147" width="60" height="5" fill="#b8923f" opacity="0.7"/>
+        </svg>
+        <span class="look-number">02</span>
+        <div class="look-caption">
+          <span class="look-label">Look 02</span>
+          <p>Draped evening gown</p>
+        </div>
+      </div>
+
+      <div class="look-card reveal">
+        <svg class="sketch" viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="240" height="320" fill="#f7f1e5"/>
+          <path d="M85,45 L155,45 L160,90 L150,132 L90,132 L80,90 Z" fill="none" stroke="#7c2a2a" stroke-width="1.4" stroke-linejoin="round"/>
+          <rect x="75" y="148" width="90" height="8" fill="#7c2a2a" opacity="0.35"/>
+          <path d="M78,156 L118,156 L114,300 L70,300 Z" fill="none" stroke="#7c2a2a" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M122,156 L162,156 L170,300 L126,300 Z" fill="none" stroke="#7c2a2a" stroke-width="1.4" stroke-linejoin="round"/>
+          <line x1="94" y1="160" x2="92" y2="296" stroke="#7c2a2a" stroke-width="1" opacity="0.45"/>
+          <line x1="146" y1="160" x2="148" y2="296" stroke="#7c2a2a" stroke-width="1" opacity="0.45"/>
+          <circle cx="120" cy="60" r="2.4" fill="#3e5c56"/>
+        </svg>
+        <span class="look-number">03</span>
+        <div class="look-caption">
+          <span class="look-label">Look 03</span>
+          <p>Cropped top &amp; wide-leg set</p>
+        </div>
+      </div>
+
+      <!-- Additional looks are added in the script below, in the `additionalLooks` array. -->
+      <div id="extra-look-cards"></div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon"><svg preserveAspectRatio="none" viewBox="0 0 800 26"><rect width="800" height="26" fill="url(#brocade)"/></svg></div>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact">
+  <div class="container footer-grid">
+    <div class="footer-col reveal">
+      <h3>Let's talk</h3>
+      <p>Open to collaborations, internships and made-to-order commissions. Reach out by email or phone, or follow the journey on Instagram.</p>
+    </div>
+    <div class="footer-col reveal">
+      <span>Contact</span>
+      <a href="mailto:daliahossamesmat@gmail.com">daliahossamesmat@gmail.com</a>
+      <a href="tel:+201142258835">+20 114 225 8835</a>
+      <p>Cairo, Egypt</p>
+    </div>
+    <div class="footer-col reveal">
+      <span>Elsewhere</span>
+      <a href="https://www.linkedin.com/in/dalia-hossam-esmat" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/dibajfashion_" target="_blank" rel="noopener">Dibaj on Instagram</a>
+      <p style="margin-top:1rem;">Languages: Arabic &amp; English</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Dalia Hossam Esmat</div>
+</footer>
+
+<script>
+  // ---------- nav scroll + mobile menu ----------
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('active', open);
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', false);
+  }));
+
+  // ---------- reveal on scroll ----------
+  function initReveal(){
+    const els = document.querySelectorAll('.reveal:not(.in-view)');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(el => observer.observe(el));
+  }
+  initReveal();
+
+  // ---------- collection: additional looks ----------
+  // To add a new piece to the collection, add an entry to this list below.
+  // Each entry needs an image link (a URL to your image) and a caption.
+  // New cards are numbered automatically, continuing on from Look 03.
+  //
+  // Example:
+  // { image: "https://example.com/my-design.jpg", caption: "Tailored wool coat, AW26" },
+
+  const additionalLooks = [
+    // { image: "https://example.com/my-design.jpg", caption: "Tailored wool coat, AW26" },
+    // { image: "https://example.com/another-design.jpg", caption: "Draped silk slip dress" },
+  ];
+
+  const DEFAULT_LOOK_COUNT = 3;
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+  function pad(n){ return String(n).padStart(2, '0'); }
+
+  function renderAdditionalLooks(){
+    const container = document.getElementById('extra-look-cards');
+    container.innerHTML = '';
+    additionalLooks.forEach((item, idx) => {
+      const lookNumber = DEFAULT_LOOK_COUNT + idx + 1;
+      const card = document.createElement('div');
+      card.className = 'look-card reveal';
+      card.innerHTML = `
+        <img src="${item.image}" alt="${escapeHtml(item.caption || 'Untitled look')}">
+        <span class="look-number">${pad(lookNumber)}</span>
+        <div class="look-caption">
+          <span class="look-label">Look ${pad(lookNumber)}</span>
+          <p>${escapeHtml(item.caption || 'Untitled look')}</p>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+    initReveal();
+  }
+  renderAdditionalLooks();
+
+</script>
+</body>
+</html>
