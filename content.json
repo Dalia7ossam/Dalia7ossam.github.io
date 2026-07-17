@@ -1,0 +1,279 @@
+{
+  "profile": {
+    "name": "Dalia Hossam Esmat",
+    "nameLine1": "Dalia",
+    "nameLine2": "Hossam",
+    "script": "Hello, I'm",
+    "role": "Fashion Designer",
+    "tagline": "Creative Portfolio",
+    "availability": "Available for Freelance",
+    "summary": "Passionate Fashion Designer with a strong eye for creativity, detail, and emerging trends. Dedicated to creating unique designs that combine aesthetics, functionality, and innovation. Continuously exploring new ideas and techniques to deliver impactful and contemporary fashion experiences.",
+    "location": "Cairo, Egypt",
+    "portrait": "images/me.jpg"
+  },
+  "stats": [
+    {
+      "n": "5+",
+      "label": "Years Studying Fashion"
+    },
+    {
+      "n": "20+",
+      "label": "Original Designs"
+    },
+    {
+      "n": "1",
+      "label": "Founded Brand · Dibaj"
+    }
+  ],
+  "projects": [
+    {
+      "n": "14",
+      "title": "فستان زفاف SS2027",
+      "tag": "SS · 27",
+      "category": "فساتين زفاف",
+      "images": [
+        "images/888.jpg",
+        "images/8.jpg",
+        "images/88.jpg"
+      ],
+      "desc": "تحويل أحد تصميمات Bridal Collection SS2027 المستوحاة من بيت الست وسيلة إلى فستان زفاف منفذ على أرض الواقع، بدءًا من تطوير الفكرة والتصميم باستخدام CLO 3D، مرورًا باختيار الخامات والتطريزات والتنفيذ، وانتهاءً بإنتاج جلسة تصوير باستخدام أدوات الذكاء الاصطناعي لإبراز الهوية البصرية المستوحاة من العمارة والتراث المصري."
+    },
+    {
+      "n": "15",
+      "title": "مجموعة سواريه وزفاف SS2027",
+      "tag": "SS · 27",
+      "category": "سواريه وزفاف",
+      "images": [
+        "images/9.jpg",
+        "images/99.jpg",
+        "images/999.jpg"
+      ],
+      "desc": "الجزء الثاني من مشروع التخرج، ويضم مجموعة Women's Evening & Bridal Collection SS2027 المستوحاة من بيت الست وسيلة، حيث تم توظيف الزخارف الإسلامية والعناصر المعمارية في تصميمات سواريه وزفاف معاصرة باستخدام CLO 3D وتقنيات الذكاء الاصطناعي، مع التركيز على القصات الانسيابية، والتطريزات المستوحاة من التراث، ولوحة ألوان تعكس فخامة العمارة المصرية."
+    },
+    {
+      "n": "13",
+      "title": "تنفيذ تصميم SS2027",
+      "tag": "SS · 27",
+      "category": "ملابس نسائية",
+      "images": [
+        "images/7.jpg",
+        "images/77.jpg",
+        "images/777.jpg"
+      ],
+      "desc": "تحويل أحد تصميمات مجموعة Women's Wear SS2027 المستوحاة من بيت الست وسيلة إلى قطعة منفذة على أرض الواقع، بدءًا من الاسكتش وتطوير المفهوم، مرورًا بإعداد Flat Sketch، والمحاكاة ثلاثية الأبعاد باستخدام CLO 3D، واختيار الخامات، وتنفيذ الباترون، وحتى التصنيع والتصوير النهائي، مع الحفاظ على هوية التصميم المستوحاة من العمارة الإسلامية والتراث المصري."
+    },
+    {
+      "n": "12",
+      "title": "Specification & Cost Sheet",
+      "tag": "SS · 27",
+      "category": "التصميم التقني",
+      "images": [
+        "images/6.jpg",
+        "images/66.jpg",
+        "images/666.jpg",
+        "images/6666.jpg",
+        "images/66666.jpg"
+      ],
+      "desc": "إعداد Specification Sheet وCost Sheet لمجموعة Women's Wear SS2027، متضمنًا Technical Flats، وPoints of Measurement (POM)، وبيانات المنتج، بالإضافة إلى تحليل تكاليف الخامات، والتطريز، والإكسسوارات، والتصنيع، وصولًا إلى تحديد سعر البيع، لضمان جاهزية التصميم للإنتاج التجاري."
+    },
+    {
+      "n": "11",
+      "title": "مجموعة نسائية SS2027",
+      "tag": "SS · 27",
+      "category": "ملابس نسائية",
+      "images": [
+        "images/5.jpg",
+        "images/55.jpg",
+        "images/555.jpg",
+        "images/5555.jpg"
+      ],
+      "desc": "الجزء الأول من مشروع تخرج مستوحى من بيت الست وسيلة بشارع المعز، يجمع بين الاسكتشات اليدوية، والتصميم ثلاثي الأبعاد باستخدام CLO 3D، ولمسات الذكاء الاصطناعي، مع إعداد Flat Sketches، ولوحة ألوان Pantone، ولوحة إلهام مستوحاة من العمارة الإسلامية لإعادة تقديم التراث المصري برؤية معاصرة."
+    },
+    {
+      "n": "04",
+      "title": "مجموعة رجالي SS2026 بالذكاء الاصطناعي",
+      "tag": "SS · 26",
+      "category": "ملابس رجالية",
+      "images": [
+        "images/4.jpg",
+        "images/44.jpg",
+        "images/444.jpg",
+        "images/4444.jpg"
+      ],
+      "desc": "تطوير تصميم من مجموعة رجالية مستوحاة من الطابع العسكري، بدءًا من الاسكتش وتحديد المفهوم، مرورًا باستخدام أدوات الذكاء الاصطناعي لإنشاء تصور واقعي، ثم إعداد رسومات Flat Drawing، وتفاصيل البناء، واختيار ألوان Pantone، وصولًا إلى ملف تقني متكامل جاهز للإنتاج."
+    },
+    {
+      "n": "03",
+      "title": "من التصميم إلى التنفيذ",
+      "tag": "SS · 25",
+      "category": "تطوير المنتج",
+      "images": [
+        "images/3.jpg"
+      ],
+      "desc": "تحويل تصميم رقمي من رسومات Flat Drawing وTechnical Sheet إلى قطعة ملابس منفذة على أرض الواقع، مع الحفاظ على الـSilhouette، والتفاصيل العضوية، ولوحة الألوان المستوحاة من اتجاهات 2025، لإبراز رحلة الانتقال من الفكرة إلى المنتج النهائي."
+    },
+    {
+      "n": "02",
+      "title": "مجموعة أزياء 2025",
+      "tag": "SS · 25",
+      "category": "مجموعة أزياء",
+      "images": [
+        "images/2.jpg",
+        "images/22.jpg",
+        "images/222.jpg",
+        "images/2222.jpg"
+      ],
+      "desc": "مجموعة مستوحاة من الأشكال العضوية للبكتيريا والفطريات، بدأت باسكتشات يدوية ثم طُورت إلى تصميمات رقمية باستخدام Adobe Illustrator، مع إعداد رسومات Flat Drawings ولوحة ألوان مستندة إلى اتجاهات 2025، لدمج الإلهام العلمي مع التصميم المعاصر."
+    },
+    {
+      "n": "01",
+      "title": "Garment Specification Sheet",
+      "tag": "تقني · 26",
+      "category": "التصميم التقني",
+      "images": [
+        "images/1.jpg",
+        "images/11.jpg"
+      ],
+      "desc": "إعداد شيت مواصفات تقني لبنطلون حريمي يضم تفاصيل الخامة، والألوان، وتوزيع الطباعة، والمقاسات، والإكسسوارات، لضمان تحويل التصميم إلى منتج قابل للتنفيذ بدقة داخل المصنع."
+    }
+  ],
+  "experience": [
+    {
+      "year": "2026",
+      "tag": "Runway",
+      "title": "Cairo Fashion Show 2026",
+      "desc": "Showcased original fashion designs on the Cairo Fashion Show 2026 runway, gaining hands-on experience in show production, styling and presentation."
+    },
+    {
+      "year": "2024",
+      "tag": "Training",
+      "title": "Al Nasser Textile Factory",
+      "desc": "Completed a training program inside a working textile factory — garment production, fabric handling and quality control from the floor up."
+    },
+    {
+      "year": "2023",
+      "tag": "Founder",
+      "title": "Dibaj Fashion — ديباج",
+      "desc": "Founded an online fashion brand on Instagram, curating pieces and managing design selection, marketing and customer relationships end to end.",
+      "link": {
+        "text": "@dibajfashion_",
+        "url": "https://www.instagram.com/dibajfashion_"
+      }
+    }
+  ],
+  "education": [
+    {
+      "title": "B.A. — Fashion Design",
+      "institution": "Faculty of Applied Arts — Fashion Department, Helwan University",
+      "date": "2021 – 2026",
+      "grade": "Overall Grade: Very Good"
+    },
+    {
+      "title": "Motion Graphics Course",
+      "institution": "Digital Egypt Pioneers Initiative (DEPI)",
+      "date": "Oct 2024 – May 2025"
+    }
+  ],
+  "skills": {
+    "title": "Technical Skills",
+    "groups": [
+      {
+        "label": "Adobe",
+        "items": [
+          "Photoshop",
+          "Illustrator",
+          "After Effects"
+        ]
+      },
+      {
+        "label": "3D & AI",
+        "items": [
+          "CLO 3D",
+          "AI-assisted design"
+        ]
+      },
+      {
+        "label": "Fashion",
+        "items": [
+          "Fashion Illustration",
+          "Pattern Making",
+          "Technical Drawing",
+          "Garment Construction",
+          "Trend Forecasting",
+          "Fabric Selection"
+        ]
+      },
+      {
+        "label": "Office & Design",
+        "items": [
+          "Excel",
+          "PowerPoint",
+          "Word",
+          "Canva"
+        ]
+      }
+    ]
+  },
+  "softSkills": [
+    "Creativity",
+    "Attention to Detail",
+    "Time Management",
+    "Communication",
+    "Teamwork & Collaboration",
+    "Problem Solving",
+    "Adaptability",
+    "Organization"
+  ],
+  "process": [
+    {
+      "n": "01",
+      "title": "Discover",
+      "icon": "search",
+      "desc": "Researching audience, mood, and the story a collection needs to tell."
+    },
+    {
+      "n": "02",
+      "title": "Ideate",
+      "icon": "lightbulb",
+      "desc": "Sketching silhouettes, exploring fabrics, and shaping the concept."
+    },
+    {
+      "n": "03",
+      "title": "Design",
+      "icon": "pencil",
+      "desc": "Fashion illustration, pattern making, and technical drawings in Illustrator & CLO 3D."
+    },
+    {
+      "n": "04",
+      "title": "Construct",
+      "icon": "scissors",
+      "desc": "Garment construction — fabric selection, fittings, and refinement."
+    },
+    {
+      "n": "05",
+      "title": "Deliver",
+      "icon": "send",
+      "desc": "Styling, presentation, and bringing the collection to the runway or client."
+    }
+  ],
+  "quote": {
+    "text": "Good design is not just how it looks, but how it wears.",
+    "signature": "Dalia",
+    "cta": "Let's create\nsomething great together."
+  },
+  "contact": {
+    "title": "LET'S WORK",
+    "titleLine2": "TOGETHER",
+    "titleDot": ".",
+    "description": "Open to collaborations, internships and made-to-order commissions. Let's create something beautiful.",
+    "email": "daliahossamesmat@gmail.com",
+    "phone": "+20 114 225 8835",
+    "phoneHref": "+201142258835",
+    "location": "Cairo, Egypt",
+    "linkedin": "https://www.linkedin.com/in/dalia-hossam-esmat",
+    "instagram": "https://www.instagram.com/dibajfashion_",
+    "languages": "Arabic · English",
+    "footerCopy": "© 2026 Dalia Hossam Esmat",
+    "footerTag": "Fashion Designer · Cairo"
+  }
+}
