@@ -2212,18 +2212,24 @@ a.contact-row:hover .contact-icon {
     padding: 1.5rem 1.25rem 3rem;
   }
 
-  /* Constrain the backdrop so it stops bleeding past the portrait */
+  /* Center the backdrop text and style it solid red */
   .hero-backdrop {
-    inset: 0 0 auto 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    top: 0;
+    bottom: auto;
     height: 32vh;
+    display: flex;
+    justify-content: center;
     align-items: flex-start;
   }
 
   .hero-backdrop span {
-    font-size: clamp(3.5rem, 18vw, 6.5rem);
+    font-size: clamp(3.5rem, 12vw, 6.5rem);
+    letter-spacing: -0.05em;
     transform: translateY(-10%);
-    opacity: 0.55;
-    -webkit-text-stroke: 0.5px rgba(214, 58, 58, 0.18);
+    color: rgba(229, 0, 26, 0.9);
   }
 
   .hero-grid {
@@ -2523,11 +2529,16 @@ a.contact-row:hover .contact-icon {
 
   .hero-backdrop {
     height: 28vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
   }
 
   .hero-backdrop span {
-    font-size: clamp(2.8rem, 18vw, 5rem);
+    font-size: clamp(2.8rem, 12vw, 5rem);
+    letter-spacing: -0.05em;
     transform: translateY(-15%);
+    color: rgba(229, 0, 26, 0.9);
   }
 
   .hero-scroll {
@@ -2753,4 +2764,41 @@ a.contact-row:hover .contact-icon {
   .lightbox-title {
     font-size: 1.1rem;
   }
+}
+
+/* ============== CV DOWNLOAD BUTTON ============== */
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  background: var(--primary);
+  color: var(--primary-fg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.3s var(--ease);
+  box-shadow: 0 4px 15px rgba(229, 0, 26, 0.25);
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.btn-cv:hover {
+  background: var(--primary-2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 0, 26, 0.4);
+  color: var(--primary-fg);
+}
+
+.btn-cv svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  transition: transform 0.3s var(--ease);
+}
+
+.btn-cv:hover svg {
+  transform: translateY(2px);
 }
